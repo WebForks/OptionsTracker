@@ -23,6 +23,12 @@
 			href: '/changelog'
 		}
 	];
+
+	function formatDate(timestamp) {
+		const datePart = timestamp.split(' ')[0]; // Split at the space and take the first element
+		const [year, month, day] = datePart.split('-');
+		return `${month}-${day}-${year}`;
+	}
 </script>
 
 <div class="flex">
@@ -70,7 +76,7 @@
 			<div class="mt-4 grid grid-cols-2 gap-4">
 				<!-- Profile Statistics -->
 				<div>
-					<p>📅 Join Date: 01-08-2021</p>
+					<p>📅 Join Date: {formatDate(data.user.created)}</p>
 					<p>🔥 Longest Streak: 3</p>
 					<p>⌚ Avg Trade Duration: 1.49 days</p>
 					<p>📝 Notes Percentage: 80.00%</p>
