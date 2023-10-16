@@ -1,6 +1,5 @@
 <script>
 	import '../app.postcss';
-	import { getImageURL } from '$lib/utils';
 	export let data;
 </script>
 
@@ -17,27 +16,22 @@
 				</div>
 			{:else}
 				<div class="dropdown dropdown-end mr-4">
-					<a href="/trades" class="btn btn-primary btn-outline">Add Project</a>
+					<a href="/trades/new" class="btn btn-primary btn-outline">New Trade</a>
 				</div>
-
 				<div class="dropdown dropdown-bottom dropdown-end">
 					<button aria-label="Click" class="btn m-1" tabindex="0">Menu</button>
-					<ul
-					  class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
-					>
-					  <li><a href="/about" class="btn btn-primary">Profile</a></li>
-					  <li><a href="/logsearch" class="btn btn-primary">logsearch</a></li>
-					  <li><a href="/about" class="btn btn-primary">About</a></li>
-					  <li><a href="/changelog" class="btn btn-primary">Changelog</a></li>
-					  <li>
-						<form action="/logout" method="POST" class="btn btn-primary">
-						  <button type="submit">Logout</button>
-						</form>
-					  </li>
+					<ul class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+						<li><a href="/user/{data.user.username}" class="btn btn-primary">Profile</a></li>
+						<li><a href="/cbtracker" class="btn btn-primary">Cost Basis Tracker</a></li>
+						<li><a href="/about" class="btn btn-primary">About</a></li>
+						<li><a href="/changelog" class="btn btn-primary">Changelog</a></li>
+						<li>
+							<form action="/logout" method="POST" class="btn btn-primary">
+								<button type="submit">Logout</button>
+							</form>
+						</li>
 					</ul>
-				  </div>
-				  	
-				  	  
+				</div>
 			{/if}
 		</div>
 	</nav>
