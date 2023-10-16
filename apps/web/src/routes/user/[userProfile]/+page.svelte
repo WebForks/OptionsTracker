@@ -29,6 +29,11 @@
 		const [year, month, day] = datePart.split('-');
 		return `${month}-${day}-${year}`;
 	}
+
+	function getCurrentYear() {
+		return new Date().getFullYear();
+	}
+	const currentYear = getCurrentYear();
 </script>
 
 <div class="flex">
@@ -77,14 +82,13 @@
 				<!-- Profile Statistics -->
 				<div>
 					<p>📅 Join Date: {formatDate(data.user.created)}</p>
-					<p>🔥 Longest Streak: 3</p>
 					<p>⌚ Avg Trade Duration: 1.49 days</p>
 					<p>📝 Notes Percentage: 80.00%</p>
 					<p>✔️ Total Wins: 3</p>
 					<p>❌ Total Losses: 2</p>
 					<p>📚 Total Assignments: 0</p>
 					<p>📈 Win Percentage: 60.00%</p>
-					<p>💰 2021 Net Premium: 158</p>
+					<p>💰 {currentYear} Net Premium: 158</p>
 				</div>
 				<!-- Achievements -->
 				<div>
